@@ -72,7 +72,9 @@ class Tiles extends Component {
 		return (
 			<div>
 				<div>
-					<button onClick={this.isGreased}>Greased?</button>
+					<button onClick={this.isGreased}>
+						{this.state.greased ? 'Show all hogs' : 'Show only greased hogs'}
+					</button>
 					<button onClick={this.nameSort}>Sort by name?</button>
 					<button onClick={this.weightSort}>Sort by weight?</button>
 				</div>
