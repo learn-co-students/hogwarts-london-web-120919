@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import pig from `/src/hog-imgs/${this.props.hog.name.split(' ').join('_')}.jpg`
-
 class Tile extends Component {
 	constructor(props) {
 		super(props);
@@ -30,7 +28,7 @@ class Tile extends Component {
 								: 'Lard me up!(Not Greased)'}
 						</h2>
 						<h2>Weight: {this.props.hog.weight}</h2>
-						{/* <h2>{this.props.hog.highest}</h2> */}
+						<h2>Medal: {this.props.hog['highest medal achieved']}</h2>
 					</div>
 				</div>
 			);
@@ -38,12 +36,15 @@ class Tile extends Component {
 			return (
 				<div className='ui eight wide column pigTile' onClick={this.showDeets}>
 					<div>
-						{this.props.hog.name}
-						<im
-							src={`/src/hog-imgs/${this.props.hog.name
+						<img
+							src={`hog-imgs/${this.props.hog.name
+								.toLowerCase()
 								.split(' ')
 								.join('_')}.jpg`}
+							alt={`Hog named: ${this.props.hog.name}`}
 						/>
+						<br />
+						{this.props.hog.name}
 					</div>
 				</div>
 			);
